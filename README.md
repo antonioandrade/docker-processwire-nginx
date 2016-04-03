@@ -4,8 +4,8 @@
 
 A Dockerfile that installs the latest nginx, php, php-apc, mysql and Processwire.
 
-Fork from [suzel/docker-processwire](https://github.com/suzel/docker-processwire) The following changes/features were introduced:
-* refactored base image to [phusion/baseimage](https://hub.docker.com/r/phusion/baseimage/),
+This is a fork from [suzel/docker-processwire](https://github.com/suzel/docker-processwire). The following changes/features were introduced:
+* refactored base image to [phusion/baseimage](https://hub.docker.com/r/phusion/baseimage/);
 * reduced number of `RUN` calls on Dockerfile and
 * (temporarily) uses [**wireshell**](wireshell.pw) to setup new website with default login credentials)`
 
