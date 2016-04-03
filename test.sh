@@ -2,18 +2,20 @@
 
 eval "$(docker-machine env default)"
 
-docker build -t suzel/docker-processwire .
+docker build -t antonioandrade/processwire .
 
-docker stop webproject
-docker rm webproject
+echo "Stopping container named:"
+docker stop processwire
+echo "Removing container named:"
+docker rm processwire
+rm -rf htdocs
+mkdir -p htdocs
+docker run --name processwire \
+             -v $(pwd)/htdocs:/usr/share/nginx \
+             -d \
+             -p 8080:80 \
+             antonioandrade/processwire
 
-docker run --name webproject \
-             -v $PWD:/usr/share/nginx \
-             -p 80:80 -p 3306:3306 \
-             -e MYSQL_DB=processwire \
-             -e MYSQL_USER=processwire \
-             -e MYSQL_PASS=processwire \
-             -d suzel/docker-processwire
-
-open http://$(docker-machine ip default):80
-docker exec -it webproject bash
+echo "Sleeping 90s for start.sh tco complete before opening Processwire."
+sleep 90s
+open http://$(docker-machine ip default):8080
