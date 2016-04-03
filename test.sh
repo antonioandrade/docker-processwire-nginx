@@ -16,6 +16,6 @@ docker run --name processwire \
              -p 8080:80 \
              antonioandrade/processwire
 
-echo "Sleeping 90s for start.sh tco complete before opening Processwire."
+echo "Sleeping 90s for start.sh to complete before opening Processwire."
 sleep 90s
 open http://$(docker-machine ip default):8080

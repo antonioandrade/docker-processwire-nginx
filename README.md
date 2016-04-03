@@ -7,7 +7,7 @@ A Dockerfile that installs the latest nginx, php, php-apc, mysql and Processwire
 This is a fork from [suzel/docker-processwire](https://github.com/suzel/docker-processwire). The following changes/features were introduced:
 * refactored base image to [phusion/baseimage](https://hub.docker.com/r/phusion/baseimage/);
 * reduced number of `RUN` calls on Dockerfile and
-* (temporarily) uses [**wireshell**](wireshell.pw) to setup new website with default login credentials)`
+* (temporarily) uses [**wireshell**](wireshell.pw) to setup new website with default login credentials
 
 
 ## Installation
@@ -37,6 +37,7 @@ $ docker run --name processwire \
              -p 3306:3306 \
              -d antonioandrade/processwire
 ```
+Initial setup does take a couple of minutes so be patient.
 
 You can then execute the following to open your new project on your host machine's browser:
 
