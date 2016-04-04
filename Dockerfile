@@ -41,7 +41,7 @@ RUN easy_install supervisor
 ADD ./config/supervisord.conf /etc/supervisord.conf
 
 # Volume
-VOLUME ["/usr/share/nginx"]
+VOLUME ["/var/lib/mysql", "/usr/share/nginx"]
 
 # Expose
 EXPOSE 80
